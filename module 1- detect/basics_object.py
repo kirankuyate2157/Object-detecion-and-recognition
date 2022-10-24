@@ -2,17 +2,17 @@ import cv2
 import numpy as np
 thres = 0.45  # Threshold to detect object
 nms_threshold = 0.2
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 cap.set(3, 1280)
 cap.set(4, 720)
 cap.set(10, 70)
 classNames= []
-classFile = 'coco.names'
+classFile = 'D:\\Kways_Project\\Object detecion and recognition\\module 1- detect\\coco.names'
 with open(classFile,'rt') as f:
     classNames = f.read().rstrip('\n').split('\n')
 
-configPath = 'ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt'
-weightsPath = 'frozen_inference_graph.pb'
+configPath = r'D:\\Kways_Project\\Object detecion and recognition\\module 1- detect\\ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt'
+weightsPath = r'D:\\Kways_Project\\Object detecion and recognition\\module 1- detect\\frozen_inference_graph.pb'
 
 net = cv2.dnn_DetectionModel(weightsPath,configPath)
 net.setInputSize(320,320)

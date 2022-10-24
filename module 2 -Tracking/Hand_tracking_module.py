@@ -37,7 +37,7 @@ class handDetector():
                 PosList.append([id, cx, cy])
 
                 if draw:
-                    cv2.circle(img, (cx, cy), 10, (255, 255, 255), cv2.FILLED)
+                    cv2.circle(img, (cx, cy), 10, (255, 0, 255), cv2.FILLED)
 
         return PosList
 
@@ -60,7 +60,7 @@ def main():
         fps = 1 / (cTime - pTime)
         pTime = cTime
 
-        cv2.putText(img, str(int(fps)), (10, 70), cv2.FONT_HERSHEY_DUPLEX, 3, (255, 0, 0), 3)
+        cv2.putText(img, str(int(fps)), (10, 70), cv2.FONT_HERSHEY_DUPLEX, 3, (255, 20, 0), 3)
 
         cv2.imshow("Webcam", img)
         cv2.waitKey(1)
